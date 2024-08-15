@@ -1,5 +1,5 @@
 from django.db.models import Count
-from django_filters import FilterSet, BooleanFilter
+from django_filters import FilterSet, BooleanFilter, ChoiceFilter
 
 from apps.models import Category, Product
 
@@ -11,11 +11,11 @@ class CategoryFilterSet(FilterSet):
 
 
 class ProductFilterSet(FilterSet):
-    image = BooleanFilter(method="has_image")
+    image = BooleanFilter(method='has_image')
 
     class Meta:
         model = Product
-        fields = []
+        fields = ['is_premium']
 
     def has_image(self, queryset, field, value):
         if value:

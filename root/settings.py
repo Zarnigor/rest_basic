@@ -99,6 +99,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 2
 }
 
 SPECTACULAR_SETTINGS = {
@@ -106,3 +108,5 @@ SPECTACULAR_SETTINGS = {
     'VERSION': '1.0.0',
     # other optional settings
 }
+
+AUTH_USER_MODEL = 'apps.User'

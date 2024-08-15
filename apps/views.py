@@ -1,5 +1,6 @@
 from drf_spectacular.utils import extend_schema
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.pagination import PageNumberPagination
 
 from apps.filters import CategoryFilterSet, ProductFilterSet
 from apps.models import Category, Product
