@@ -57,12 +57,15 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'root.wsgi.application'
+
 DATABASES = {
-    'default': {
-        'NAME': os.getenv("DATABASE_NAME"),
-        'USER': os.getenv("USER"),
-        'PASSWORD': os.getenv("DATABASE_PASSWORD"),
-        'POST': '5432',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": os.getenv('PG_DB_NAME'),
+        "USER": os.getenv('PG_USER'),
+        "PASSWORD": os.getenv('PG_PASSWORD'),
+        "HOST": os.getenv('PG_HOST'),
+        "PORT": os.getenv('PG_PORT'),
     }
 }
 
