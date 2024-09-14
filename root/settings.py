@@ -57,11 +57,12 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'root.wsgi.application'
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.getenv("DATABASE_NAME"),
+        'USER': os.getenv("USER"),
+        'PASSWORD': os.getenv("DATABASE_PASSWORD"),
+        'POST': '5432',
     }
 }
 
